@@ -33,6 +33,15 @@ public class LoginActivity extends Activity {
 			}
 		});
 		
+		findViewById(R.id.btn_forget_password).setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				goRecoverPassword();
+				
+			}
+		});
+		
 		fragAccount=(SimpleTextInputCellFragment)getFragmentManager().findFragmentById(R.id.input_account);
 		fragPassword=(SimpleTextInputCellFragment)getFragmentManager().findFragmentById(R.id.input_password);
 		
@@ -48,6 +57,11 @@ public class LoginActivity extends Activity {
 		fragPassword.setHintText(" ‰»Î√‹¬Î");
 		fragPassword.setIsPassword(true);
 		
+	}
+	
+	void goRecoverPassword(){
+		Intent itnt = new Intent(this,PasswordReconverActivity.class);
+		startActivity(itnt);
 	}
 	
 	void goLogin(){

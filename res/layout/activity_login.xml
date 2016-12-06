@@ -34,7 +34,8 @@
             class="com.example.helloworld.fragments.inputcells.SimpleTextInputCellFragment"
             tools:layout="@layout/fragment_inputcell_simpletext" />
 
-        <TextView android:id="@+id/btn_forget_password" 
+        <TextView 
+            android:id="@+id/btn_forget_password" 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"

@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="输入项目"
-        android:textColor="@android:color/white"
         android:textSize="12sp"/>
 
 <EditText
