@@ -4,6 +4,8 @@
     <item android:state_selected="true"><shape android:shape="rectangle">
             <solid android:color="#33ffffff" />
         </shape></item>
+        
+    <item android:drawable="@drawable/bg_tab_roundrect" android:state_selected="true"></item>
     <item android:drawable="@android:color/transparent"></item>
 
 </selector>

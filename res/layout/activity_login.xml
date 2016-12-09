@@ -4,6 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" 
     android:background="#ffffff">
+    
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,14 +30,14 @@
             android:layout_height="wrap_content"
             class="com.example.helloworld.fragments.inputcells.SimpleTextInputCellFragment"
             tools:layout="@layout/fragment_inputcell_simpletext" />
-
+        
         <fragment
             android:id="@+id/input_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             class="com.example.helloworld.fragments.inputcells.SimpleTextInputCellFragment"
             tools:layout="@layout/fragment_inputcell_simpletext" />
-
+        
         <TextView 
             android:id="@+id/btn_forget_password" 
             android:layout_width="wrap_content"
@@ -64,5 +68,5 @@
         
         </LinearLayout>
     </LinearLayout>
-
+</ScrollView>
 </FrameLayout>

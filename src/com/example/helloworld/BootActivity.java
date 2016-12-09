@@ -49,7 +49,7 @@ public class BootActivity extends Activity {
 			@Override
 			public void onResponse(Call arg0, final Response arg1) throws IOException {
 				Log.d("response", arg1.toString());
-				
+				startLoginActivity();
 //				BootActivity.this.runOnUiThread(new Runnable() {
 //					
 //					@Override
@@ -71,7 +71,15 @@ public class BootActivity extends Activity {
 					
 					@Override
 					public void run() {
-						Toast.makeText(BootActivity.this, arg1.getLocalizedMessage(), Toast.LENGTH_SHORT).show();						
+						runOnUiThread(new Runnable() {
+							
+							@Override
+							public void run() {
+								Toast.makeText(BootActivity.this, arg1.getLocalizedMessage(), Toast.LENGTH_SHORT).show();	
+								
+							}
+						});
+						
 					}
 				});
 				

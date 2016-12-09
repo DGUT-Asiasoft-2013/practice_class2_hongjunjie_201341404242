@@ -36,6 +36,10 @@ public class SimpleTextInputCellFragment extends Fragment{
 		edit.setHint(setHintText);
 	}
 	
+	public String getText(){
+		return edit.getText().toString();
+	}
+	
 	public void setIsPassword(boolean setIsPassword){
 		if(setIsPassword){
 			edit.setInputType(EditorInfo.TYPE_CLASS_TEXT|EditorInfo.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
