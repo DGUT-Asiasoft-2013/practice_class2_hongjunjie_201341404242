@@ -19,7 +19,7 @@ public class MainTabbarFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_main_tabbar, null);
 		
-		btnNew = view.findViewById(R.id.btn_next);
+		btnNew = view.findViewById(R.id.btn_new);
 		tabFeeds = view.findViewById(R.id.tab_feeds);
 		tabNotes = view.findViewById(R.id.tab_notes);
 		tabSearch = view.findViewById(R.id.tab_search);
@@ -38,6 +38,14 @@ public class MainTabbarFragment extends Fragment {
 				}
 			});			
 		}
+		
+		btnNew.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				onNewClicked();
+			}
+		});
 		
 		return view;
 	}
@@ -74,5 +82,20 @@ public class MainTabbarFragment extends Fragment {
 		if(onTabSelectedListener!=null && selectedIndex>=0){
 			onTabSelectedListener.onTabSelected(selectedIndex);
 		}
+	}
+	
+	public static interface OnNewClickedListener{
+		void onNewClicked();
+	}
+	
+	OnNewClickedListener onNewClickedListener;
+
+	public void setOnNewClickedListener(OnNewClickedListener listener){
+		this.onNewClickedListener = listener;
+	}
+	
+	void onNewClicked(){
+		if(onNewClickedListener!=null)
+			onNewClickedListener.onNewClicked();
 	}
 }
