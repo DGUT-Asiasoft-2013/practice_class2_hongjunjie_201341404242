@@ -88,7 +88,7 @@ public class RegisterActivity extends Activity {
 		MultipartBody body = builder.build();
 
 		Request request = new Request.Builder().method("GET", null).post(body)
-				.url("http://172.27.0.54:8080/membercenter/api/register").build();
+				.url("http://172.27.0.4:8080/membercenter/api/register").build();
 		// 异步发起请求
 		client.newCall(request).enqueue(new Callback() {
 
@@ -104,22 +104,30 @@ public class RegisterActivity extends Activity {
 			}
 
 			@Override
-			public void onFailure(Call arg0, IOException arg1) {
-				RegisterActivity.this.onFailure(arg0, arg1);
+			public void onFailure(final Call arg0, final IOException arg1) {
+								runOnUiThread(new Runnable() {
+									
+									@Override
+									public void run() {
+										RegisterActivity.this.onFailure(arg0, arg1);
+									}
+								});
 			}
 		});
 	}
 
 	private void onResponse(Call call, Response response) {
 		progressDialog.dismiss();
-		try {
-			new AlertDialog.Builder(this).setTitle("请求成功").setMessage(response.body().string())
-					.setNegativeButton("确定", null).show();
-		} catch (IOException e) {
-			e.printStackTrace();
-			Log.e(TAG, e.getMessage());
-			onFailure(call, e);
-		}
+		Toast.makeText(this, "注册成功", Toast.LENGTH_SHORT).show();
+				finish();
+		//		try {
+		//			new AlertDialog.Builder(this).setTitle("请求成功").setMessage(response.body().string())
+		//					.setNegativeButton("确定", null).show();
+		//		} catch (IOException e) {
+		//			e.printStackTrace();
+		//			Log.e(TAG, e.getMessage());
+		//			onFailure(call, e);
+		//		}
 	}
 
 	private void onFailure(Call call, Exception e) {
