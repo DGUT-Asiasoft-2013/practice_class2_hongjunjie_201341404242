@@ -5,21 +5,18 @@ import java.io.Serializable;
 
 public class User implements Serializable{
 	Integer id;
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
 	
 	String account;
 	String passwordHash;
 	String name;
 	String email;
 	String avatar;
-	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	public String getAccount() {
 		return account;
 	}
@@ -50,4 +47,6 @@ public class User implements Serializable{
 	public void setAvatar(String avatar) {
 		this.avatar = avatar;
 	}
+
+	
 }

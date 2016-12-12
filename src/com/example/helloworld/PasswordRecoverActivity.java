@@ -7,7 +7,7 @@ import com.example.helloworld.fragments.PasswordRecoverSetp2Fragment;
 import android.app.Activity;
 import android.os.Bundle;
 
-public class PasswordReconverActivity extends Activity {
+public class PasswordRecoverActivity extends Activity {
 	PasswordRecoverSetp1Fragment step1 = new PasswordRecoverSetp1Fragment();
 	PasswordRecoverSetp2Fragment step2 = new PasswordRecoverSetp2Fragment();
 

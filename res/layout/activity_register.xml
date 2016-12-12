@@ -40,20 +40,20 @@
         	    android:layout_height="wrap_content"
         	    class="com.example.helloworld.fragments.inputcells.SimpleTextInputCellFragment"
         	    tools:layout="@layout/fragment_inputcell_simpletext" />
-        	
+
         	<fragment
         	    android:id="@+id/input_password_repeat"
         	    android:layout_width="match_parent"
         	    android:layout_height="wrap_content"
         	    class="com.example.helloworld.fragments.inputcells.SimpleTextInputCellFragment"
         	    tools:layout="@layout/fragment_inputcell_simpletext" />
-        
-      		<fragment
-          		android:id="@+id/input_picture"
-          		android:layout_width="match_parent"
-          		android:layout_height="wrap_content"
-          		class="com.example.helloworld.fragments.inputcells.PictureInputCellFragment"
-          		tools:layout="@layout/fragment_inputcell_picture" />
+
+        	<fragment
+        	    android:id="@+id/input_picture"
+        	    android:layout_width="match_parent"
+        	    android:layout_height="wrap_content"
+        	    class="com.example.helloworld.fragments.inputcells.PictureInputCellFragment"
+        	    tools:layout="@layout/fragment_inputcell_picture" />
             
         <Button 
             android:id="@+id/btn_submit"
