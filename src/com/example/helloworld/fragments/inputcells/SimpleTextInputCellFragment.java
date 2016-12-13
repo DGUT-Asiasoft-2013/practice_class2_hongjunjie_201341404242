@@ -42,7 +42,7 @@ public class SimpleTextInputCellFragment extends Fragment{
 	
 	public void setIsPassword(boolean setIsPassword){
 		if(setIsPassword){
-			edit.setInputType(EditorInfo.TYPE_CLASS_TEXT|EditorInfo.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+			edit.setInputType(EditorInfo.TYPE_CLASS_TEXT|EditorInfo.TYPE_NUMBER_VARIATION_PASSWORD);
 		}else{
 			edit.setInputType(EditorInfo.TYPE_CLASS_TEXT);
 		}
