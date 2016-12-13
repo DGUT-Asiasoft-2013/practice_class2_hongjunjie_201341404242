@@ -11,7 +11,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.webkit.WebView.FindListener;
 
-public class PasswordRecoverSetp1Fragment extends Fragment {
+public class PasswordRecorverStep1Fragment extends Fragment {
 	SimpleTextInputCellFragment fragEmail;
 	View view;
 	
@@ -43,20 +43,24 @@ public class PasswordRecoverSetp1Fragment extends Fragment {
 		fragEmail.setHintText(" ‰»Î◊¢≤·” œ‰µÿ÷∑");
 	}
 	
-	public static interface OnGoNextListener{
-		void onGoNext();
-	}
-	
-	OnGoNextListener onGoNextListener;
-	
-	public void setOnGoNextListener(OnGoNextListener onGoNextListener) {
-		this.onGoNextListener = onGoNextListener;
-	}
-	
-	void goNext(){
-		if(onGoNextListener!=null){
-			onGoNextListener.onGoNext();
+	private void goNext() {
+		if (onGoNextListener != null) {
+			onGoNextListener.goNext();
 		}
+	}
+	
+	public String getEmailText(){
+		return fragEmail.getText();
+	}
+
+	public static interface OnGoNextListener {
+		void goNext();
+	}
+
+	private OnGoNextListener onGoNextListener;
+
+	public void setOnNextListener(OnGoNextListener onGoNextListener) {
+		this.onGoNextListener = onGoNextListener;
 	}
 }
 	
