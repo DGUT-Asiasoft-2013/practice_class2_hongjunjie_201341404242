@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import okhttp3.Call;
@@ -19,13 +20,14 @@ import okhttp3.Response;
 public class NewContentActivity extends Activity {
 	EditText editTitle, editText;
 	
+	private String TAG="NewContentActivity";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_new_content);
 		
 		editTitle = (EditText) findViewById(R.id.title);
-		editText = (EditText) findViewById(R.id.text);
+		editText = (EditText) findViewById(R.id.etContent);
 		
 		findViewById(R.id.btn_send).setOnClickListener(new View.OnClickListener() {
 			
@@ -55,7 +57,7 @@ public class NewContentActivity extends Activity {
 			@Override
 			public void onResponse(Call arg0, Response arg1) throws IOException {
 				final String responseBody = arg1.body().string();
-				
+				Log.e(TAG, "hello:"+responseBody);
 				runOnUiThread(new Runnable() {
 					public void run() {
 						NewContentActivity.this.onSucceed(responseBody);
@@ -75,6 +77,7 @@ public class NewContentActivity extends Activity {
 	}
 	
 	void onSucceed(String text){
+		Log.e(TAG, text);
 		new AlertDialog.Builder(this).setMessage(text)
 		.setPositiveButton("OK", new DialogInterface.OnClickListener() {
 			

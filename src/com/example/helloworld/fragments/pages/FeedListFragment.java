@@ -21,6 +21,7 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -124,6 +125,7 @@ public class FeedListFragment extends Fragment {
 			return data==null ? 0 : data.size();
 		}
 	};
+	protected String TAG="FeedListFragment";
 
 	void onItemClicked(int position){
 		Article text = data.get(position);
@@ -152,6 +154,7 @@ public class FeedListFragment extends Fragment {
 					Page<Article> data = new ObjectMapper()
 							.readValue(arg1.body().string(),
 									new TypeReference<Page<Article>>(){});
+					Log.e(TAG, "g");
 					FeedListFragment.this.page = data.getNumber();
 					FeedListFragment.this.data = data.getContent();
 					getActivity().runOnUiThread(new Runnable() {
