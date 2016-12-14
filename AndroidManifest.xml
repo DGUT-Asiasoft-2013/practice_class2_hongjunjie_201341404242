@@ -32,6 +32,7 @@
         <activity android:name="com.example.helloworld.FeedContentActivity"></activity>
         <activity android:name="com.example.helloworld.AddContentActivity"></activity>
         <activity android:name="com.example.helloworld.NewContentActivity"></activity>
+         <activity android:name="com.example.helloworld.AddCommentActivity"></activity>
     </application>
 
 </manifest>
