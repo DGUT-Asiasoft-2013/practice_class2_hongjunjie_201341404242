@@ -67,12 +67,12 @@ public class AvatarView extends View {
 		load(Server.serverAddress + user.getAvatar());
 			}
 			
-			public void load(String url){
+	public void load(String url){
 				
 		OkHttpClient client = Server.getHttpClient();
 		
 		Request request = new Request.Builder()
-				.url(url)
+				.url(Server.serverAddress+url)
 				.method("get", null)
 				.build();
 		

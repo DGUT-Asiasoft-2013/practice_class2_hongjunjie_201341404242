@@ -100,7 +100,7 @@ public class FeedListFragment extends Fragment {
 			textContent.setText(article.getText());
 			textTitle.setText(article.getTitle());
 			textAuthorName.setText(article.getAuthorName());
-			avatar.load(Server.serverAddress + article.getAuthorAvatar());
+			avatar.load(article.getAuthorAvatar());
 			
 			String dateStr = DateFormat.format("yyyy-MM-dd hh:mm", article.getCreateDate()).toString();
 			textDate.setText(dateStr);
